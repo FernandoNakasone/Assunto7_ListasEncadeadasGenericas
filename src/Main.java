@@ -1,5 +1,24 @@
+import listas.ListaIntCrescente;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.print("Informe um valor positivo para inserir (negativo sair):");
+        int valor = sc.nextInt();
+        ListaIntCrescente lista = new ListaIntCrescente();
+        do{
+            lista.insere(valor);
+
+            lista.mostra();
+
+            System.out.print("Informe um valor positivo para inserir (negativo sair):");
+            valor = sc.nextInt();
+        }while (valor >= 0);
+
+        sc.close();
     }
 }
